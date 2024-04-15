@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css'; // Optional for styling
-import FavoritesBar from './assets/FavoritesBar'
-// import Tabs from './assets/tabs'
+import FavoritesBar from './assets/FavoritesBar';
+import ChosenCityPanel from './assets/ChosenCityPanel';
+import SearchBar from './assets/SearchBar';
 
 console.log("API endpoint:", '/api/data'); // Log the endpoint
 
@@ -23,10 +23,10 @@ function App() {
   }, []);
 
   return (
-    <div className="
-    flex justify-center
-    bg-red-500">
+    <div className="min-h-screen flex flex-col justify-start items-center">
       <FavoritesBar />
+      <ChosenCityPanel />
+      <SearchBar />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const FavoritesBar = () => {
       };
   return (
     <div
-      className="fixed top-0 
+      className=" 
     flex flex-row gap-1
     text-white shadow-lg"
     >
@@ -32,7 +32,7 @@ const FavoriteBubble = ({ city, addToFavoriteTooltip = 'Pin current city' }) => 
         {isEmpty ? (
           <div className="favorite-bubble group">
           <CgAdd />
-          <span class="favorite-bubble-tooltip group-hover:scale-100">
+          <span className="favorite-bubble-tooltip group-hover:scale-100">
             {addToFavoriteTooltip}
           </span>
         </div>
