@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .favorite-bubble {
+    @apply relative flex items-center flex-col justify-center
+    text-gray-300
+    bg-gray-100
+    h-36 w-36 mt-2 mb-2 mx-auto rounded-full
+    hover:bg-gray-400 hover:text-white
+    transition-all duration-300 ease-out cursor-pointer;
+  }
+  .favorite-bubble-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-2 rounded-md shadow-md
+    text-white bg-gray-900 
+    text-xs font-bold 
+    transition-all duration-100 scale-0 origin-left
+    z-auto;
+  }
+
+  .favorite-bubble-hr {
+    @apply bg-gray-300 dark:bg-gray-800 
+    border border-gray-200 dark:border-gray-800 rounded-full
+    mx-2;
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
