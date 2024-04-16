@@ -17,3 +17,6 @@ dist/
 # Editor Config
 .vscode/
 .idea/
+
+# Env
+.env

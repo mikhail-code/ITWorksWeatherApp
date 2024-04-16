@@ -11,7 +11,7 @@ const FavoritesBar = () => {
     <div
       className=" 
     flex flex-row gap-1
-    text-white shadow-lg"
+    text-white"
     >
       <i><FavoriteBubble city={myCity}/></i>
       <i><FavoriteBubble /></i>
