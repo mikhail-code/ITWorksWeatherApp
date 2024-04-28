@@ -1,7 +1,6 @@
 const mockAccuweather = require('../__mocks__/accuweather');
 const { getLocationSuggestions } = require('../services/accuweather'); // Import original for testing
-
-jest.mock('../services/accuweather', () => mockAccuweather); // Mock the service
+const { jest } = require('@jest/globals');
 
 test('getLocationSuggestions returns suggestions for a query', async () => {
   const query = 'London';
