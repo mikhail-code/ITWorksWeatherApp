@@ -2,10 +2,10 @@ const accuweatherService = require('../APIs/accuweather');
 const mockService = require('../mocks/accuweather');
 
 const getLocationSuggestions = async (req, res, useMockService = false) => {
-  const query = req.query.q; // Assuming query parameter is named 'q'
+  const query = req.query.q; 
 
   if (useMockService) {
-    const weatherData = mockService.getLocationSuggestions(query); // Use mock service
+    const weatherData = mockService.getLocationSuggestions(query); 
     res.json(weatherData);
   } else {
     try {

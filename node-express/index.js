@@ -5,13 +5,12 @@ const app = express();
 const port = 5000;
 require('dotenv').config();
 
-let useMockAccuweather = process.env.TO_MOCK === 'true';
+const useMockService = process.env.TO_MOCK === 'true'; // We need this to excape problems with .env values are string by default 
 
-console.log(process.env.TO_MOCK ? 'Using mock AccuWeather service for testing.' : 'Using real AccuWeather service.');
-
+console.log(useMockService ? 'Using mock AccuWeather service for testing.' : 'Using real AccuWeather service.');
 // ... (other middleware setup)
 
-app.use('/weather', accuweatherRoutes(useMockAccuweather)); // Pass useMockAccuweather flag to routes
+app.use('/weather', accuweatherRoutes(useMockService)); // Pass useMockService flag to routes
 
 // ... (other route definitions)
 
