@@ -6,7 +6,7 @@ const mockService = require('../mocks/accuweather');
 module.exports = (useMockService) => {
   const router = express.Router();
 
-  const handleRequest = async (req, res) => {
+  const handleSearchCity = async (req, res) => {
     // ... your existing route logic
     if (useMockService) {
       // Use mock service (e.g., call mockService.getLocationSuggestions(req.query.q))
@@ -20,7 +20,7 @@ module.exports = (useMockService) => {
 
   router.get('/searchCity', async (req, res) => {
     const query = req.query.q;
-    await handleRequest(req, res);
+    await handleSearchCity(req, res);
   });
 
   router.get('/getCityData', async (req, res) => {
