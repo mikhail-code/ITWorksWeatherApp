@@ -1,23 +1,20 @@
 import React from "react";
 import { CgAdd } from "react-icons/cg";
-const myCity = {
-    fullName: "Tel Aviv",
-    code: "TLV",
-    temp: "+31",
-    img: "assets/img/tlv.jpeg",
-  };
-const ChosenCityPanel = ({ city = myCity }) => {
-  // Assuming city data is passed as a prop
+
+const ChosenCityPanel = ({ selectedCity }) => {
+  // data is passed as a prop (selectedCity)
+  
 
   return (
     <div className="flex shadow-lg text-gray-800 h-200">
-     <div className="panel grid grid-cols-3 gap-4">
+    {selectedCity ? (
+      <div className="panel grid grid-cols-3 gap-4">
         {/* Left Side */}
         <div className="left-side flex flex-col p-4 justify-center items-center">
           <h1 className="city-name text-3xl font-bold text-gray-800">
-            {city.fullName}
+            {selectedCity.LocalizedName}
           </h1>
-          <p className="city-temp text-lg text-gray-600">{city.temp}</p>
+          <p className="city-temp text-lg text-gray-600">11</p>
         </div>
 
         {/* Right Side */}
@@ -37,10 +34,13 @@ const ChosenCityPanel = ({ city = myCity }) => {
               </span>
               <p className="text-xs text-gray-600">Mon</p>
             </div>
-            {/* Repeat for other days */}
+            {/* Repeat for other days (update with actual weather data from API) */}
           </div>
         </div>
       </div>
+      ) : ( // Render message if no city is selected
+        <div>No city selected yet.</div>
+      )}
     </div>
   );
 };

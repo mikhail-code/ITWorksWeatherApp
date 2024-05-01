@@ -3,6 +3,7 @@ import axios from 'axios';
 import FavoritesBar from './assets/FavoritesBar';
 import ChosenCityPanel from './assets/ChosenCityPanel';
 import SearchBar from './assets/SearchBar';
+import WeatherForCityPage from './assets/pages/WeatherForCityPage';
 
 console.log("API endpoint:", '/api/data'); // Log the endpoint
 
@@ -49,11 +50,16 @@ function App() {
     fetchData();
   }, []);
 
+  // return (
+  //   <div className="min-h-screen flex flex-col justify-start items-center">
+  //     <FavoritesBar />
+  //     <ChosenCityPanel />
+  //     <SearchBar />
+  //   </div>
+  // );
   return (
-    <div className="min-h-screen flex flex-col justify-start items-center">
-      <FavoritesBar />
-      <ChosenCityPanel />
-      <SearchBar />
+    <div className="App">
+      <WeatherForCityPage />
     </div>
   );
 }
