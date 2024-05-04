@@ -24,6 +24,22 @@
     border border-gray-200 dark:border-gray-800 rounded-full
     mx-2;
   }
+  .horizontal-scroll-wrapper {
+    width: 300px; /* Set your desired width */
+    height: 100px; /* Set your desired height */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks within child elements */
+    transform: rotate(-90deg); /* Rotate the container 90 degrees counterclockwise */
+    transform-origin: right top; /* Set the rotation origin */
+  }
+  
+  .horizontal-scroll-wrapper > div {
+    width: 100px; /* Set the width of each hour div */
+    height: 100px; /* Set the height of each hour div */
+    display: inline-block; /* Display the hours in a row */
+    padding: 10px; /* Add padding for spacing */
+  }
 }
 
 :root {
