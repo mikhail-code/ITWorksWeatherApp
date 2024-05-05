@@ -51,7 +51,7 @@ async function getCityDataByLocationKey(query, apiKey) {
 
 async function get12HoursForecast(locationKey, apiKey) {
   // http://localhost:5000/weather/get12HoursForecast?locationKey=215854
-  const url = `${baseUrl}forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
+  const url = `${baseUrl}forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}?metric=true`;
   try {
     const response = await axios.get(url);
     return response.data;
@@ -62,7 +62,7 @@ async function get12HoursForecast(locationKey, apiKey) {
 }
 
 async function get5DaysForecast(locationKey, apiKey) {
-  const url = `${baseUrl}forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`;
+  const url = `${baseUrl}forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}?metric=true`;
   try {
     const response = await axios.get(url);
     return response.data;

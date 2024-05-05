@@ -1,3 +1,4 @@
+const fs = require('fs');
 module.exports = {
   getLocationSuggestions: (query) => {
     // Sample data with relevant locations and some variations
@@ -109,107 +110,29 @@ module.exports = {
     return mockCityData;
   },
 
+
   get12HoursForecast: () => {
-    // Sample mock data for 12-hour forecast (modify based on your actual data structure)
-    return [
-      {
-        "DateTime": "2024-05-04T22:00:00+03:00",
-        "EpochDateTime": 1714849200,
-        "WeatherIcon": 36,
-        "IconPhrase": "Intermittent clouds",
-        "HasPrecipitation": false,
-        "IsDaylight": false,
-        "Temperature": {
-          "Value": 71,
-          "Unit": "F",
-          "UnitType": 18
-        },
-        "PrecipitationProbability": 0,
-        "MobileLink": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=1&hbhhour=22&lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=1&hbhhour=22&lang=en-us"
-      },
-      {
-        "DateTime": "2024-05-04T23:00:00+03:00",
-        "EpochDateTime": 1714852800,
-        "WeatherIcon": 36,
-        "IconPhrase": "Intermittent clouds",
-        "HasPrecipitation": false,
-        "IsDaylight": false,
-        "Temperature": {
-          "Value": 70,
-          "Unit": "F",
-          "UnitType": 18
-        },
-        "PrecipitationProbability": 0,
-        "MobileLink": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=1&hbhhour=23&lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=1&hbhhour=23&lang=en-us"
-      },
-      // Include remaining hours from your data (up to 12 entries)
-      {
-        "DateTime": "2024-05-05T09:00:00+03:00",
-        "EpochDateTime": 1714888800,
-        "WeatherIcon": 3,
-        "IconPhrase": "Partly sunny",
-        "HasPrecipitation": false,
-        "IsDaylight": true,
-        "Temperature": {
-          "Value": 71,
-          "Unit": "F",
-          "UnitType": 18
-        },
-        "PrecipitationProbability": 0,
-        "MobileLink": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=2&hbhhour=9&lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/hourly-weather-forecast/215854?day=2&hbhhour=9&lang=en-us"
-      }
-    ];
+    try {
+      const filePath = './mocks/12HoursForecastMock.json'; // Corrected file path
+      const data = fs.readFileSync(filePath, 'utf8');
+      const forecastData = JSON.parse(data);
+      return forecastData;
+    } catch (error) {
+      console.error('Error reading forecast mock data:', error.message); // Improved error message
+      // Handle error gracefully, possibly return a default mock or log the error
+    }
   },
 
   get5DaysForecast: () => {
-    return {
-      "Headline": {
-        "EffectiveDate": "2024-05-06T02:00:00+03:00",
-        "EffectiveEpochDate": 1714950000,
-        "Severity": 3,
-        "Text": "Expect showery weather late Sunday night through Monday morning",
-        "Category": "rain",
-        "EndDate": "2024-05-06T14:00:00+03:00",
-        "EndEpochDate": 1714993200,
-        "MobileLink": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?lang=en-us",
-        "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?lang=en-us"
-      },
-      "DailyForecasts": [
-        {
-          "Date": "2024-05-04T07:00:00+03:00",
-          "EpochDate": 1714795200,
-          "Temperature": {
-            "Minimum": {
-              "Value": 66,
-              "Unit": "F",
-              "UnitType": 18
-            },
-            "Maximum": {
-              "Value": 78,
-              "Unit": "F",
-              "UnitType": 18
-            }
-          },
-          "Day": {
-            "Icon": 1,
-            "IconPhrase": "Sunny",
-            "HasPrecipitation": false
-          },
-          "Night": {
-            "Icon": 35,
-            "IconPhrase": "Partly cloudy",
-            "HasPrecipitation": false
-          },
-          "Sources": [
-            "AccuWeather"
-          ],
-          "MobileLink": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
-          "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us"
-        }
-    ]
+    try {
+      const filePath = './mocks/5DaysForecastMock.json'; // Corrected file path
+      const data = fs.readFileSync(filePath, 'utf8');
+      const forecastData = JSON.parse(data);
+      return forecastData;
+    } catch (error) {
+      console.error('Error reading forecast mock data:', error.message); // Improved error message
+      // Handle error gracefully, possibly return a default mock or log the error
+    }
   }
-  }
+   
 };

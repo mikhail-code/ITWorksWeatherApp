@@ -1,0 +1,180 @@
+{
+    "Headline": {
+      "EffectiveDate": "2024-05-07T19:00:00+03:00",
+      "EffectiveEpochDate": 1715097600,
+      "Severity": 3,
+      "Text": "Mixed rain and snow Tuesday evening",
+      "Category": "snow/rain",
+      "EndDate": "2024-05-08T01:00:00+03:00",
+      "EndEpochDate": 1715119200,
+      "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?lang=en-us",
+      "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?lang=en-us"
+    },
+    "DailyForecasts": [
+      {
+        "Date": "2024-05-05T07:00:00+03:00",
+        "EpochDate": 1714881600,
+        "Temperature": {
+          "Minimum": {
+            "Value": 33,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 47,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 6,
+          "IconPhrase": "Mostly cloudy",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 36,
+          "IconPhrase": "Intermittent clouds",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=1&lang=en-us",
+        "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=1&lang=en-us"
+      },
+      {
+        "Date": "2024-05-06T07:00:00+03:00",
+        "EpochDate": 1714968000,
+        "Temperature": {
+          "Minimum": {
+            "Value": 28,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 45,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 13,
+          "IconPhrase": "Mostly cloudy w/ showers",
+          "HasPrecipitation": true,
+          "PrecipitationType": "Rain",
+          "PrecipitationIntensity": "Light"
+        },
+        "Night": {
+          "Icon": 36,
+          "IconPhrase": "Intermittent clouds",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=2&lang=en-us",
+        "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=2&lang=en-us"
+      },
+      {
+        "Date": "2024-05-07T07:00:00+03:00",
+        "EpochDate": 1715054400,
+        "Temperature": {
+          "Minimum": {
+            "Value": 29,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 43,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 4,
+          "IconPhrase": "Intermittent clouds",
+          "HasPrecipitation": true,
+          "PrecipitationType": "Rain",
+          "PrecipitationIntensity": "Light"
+        },
+        "Night": {
+          "Icon": 29,
+          "IconPhrase": "Rain and snow",
+          "HasPrecipitation": true,
+          "PrecipitationType": "Snow",
+          "PrecipitationIntensity": "Light"
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=3&lang=en-us",
+        "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=3&lang=en-us"
+      },
+      {
+        "Date": "2024-05-08T07:00:00+03:00",
+        "EpochDate": 1715140800,
+        "Temperature": {
+          "Minimum": {
+            "Value": 29,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 43,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 21,
+          "IconPhrase": "Partly sunny w/ flurries",
+          "HasPrecipitation": true,
+          "PrecipitationType": "Mixed",
+          "PrecipitationIntensity": "Light"
+        },
+        "Night": {
+          "Icon": 33,
+          "IconPhrase": "Clear",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=4&lang=en-us",
+        "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=4&lang=en-us"
+      },
+      {
+        "Date": "2024-05-09T07:00:00+03:00",
+        "EpochDate": 1715227200,
+        "Temperature": {
+          "Minimum": {
+            "Value": 36,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 45,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 7,
+          "IconPhrase": "Cloudy",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 29,
+          "IconPhrase": "Rain and snow",
+          "HasPrecipitation": true,
+          "PrecipitationType": "Mixed",
+          "PrecipitationIntensity": "Light"
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=5&lang=en-us",
+        "Link": "http://www.accuweather.com/en/ru/saint-petersburg/295212/daily-weather-forecast/295212?day=5&lang=en-us"
+      }
+    ]
+  }
