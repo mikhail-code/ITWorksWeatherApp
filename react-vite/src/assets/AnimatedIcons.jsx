@@ -12,7 +12,10 @@ function SunnyIcon() {
   function RainyIcon() {
     return <div className={styles.rainy}></div>;
   }
+  function Moon() {
+    return <div className={styles.moon}></div>;
+  }
 
   
   // Export components using named exports
-  export { SunnyIcon, RainyIcon, CloudyIcon };
+  export { SunnyIcon, RainyIcon, CloudyIcon, Moon };

@@ -2,11 +2,11 @@ import { Fragment, useState, useEffect } from "react";
 import { CgAdd } from "react-icons/cg";
 import axios from "axios";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { ChevronUpIcon, MoonIcon } from "@heroicons/react/20/solid";
 
-import { SunnyIcon, RainyIcon, CloudyIcon } from "./AnimatedIcons";
+import { SunnyIcon, RainyIcon, CloudyIcon, Moon } from "./AnimatedIcons";
 
-const ChosenCityPanel = ({ selectedCity }) => {
+const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
   // data is passed as a prop (selectedCity)
 
   const [loading, setLoading] = useState(false);
@@ -101,7 +101,7 @@ const ChosenCityPanel = ({ selectedCity }) => {
                         )) ||
                           ([1, 2, 3, 33].includes(weatherData.WeatherIcon) && (
                             <>
-                              <SunnyIcon />
+                            {isDarkMode ? <Moon /> : <SunnyIcon />}
                             </>
                           )) ||
                           ([
@@ -115,8 +115,10 @@ const ChosenCityPanel = ({ selectedCity }) => {
                     )}
                   </>
                 )}
-                <h1 className="city-name text-3xl font-bold text-gray-800 whitespace-wrap">
-                  {selectedCity && selectedCity.LocalizedName}{" "}
+                <h1 className={isDarkMode ? "text-white" : "text-black"}>
+                  <span className="city-name text-3xl font-bold whitespace-wrap">
+                    {selectedCity && selectedCity.LocalizedName}
+                  </span>
                 </h1>
                 {loading ? (
                   <p>Loading weather data...WeatherIcon</p>
@@ -126,15 +128,46 @@ const ChosenCityPanel = ({ selectedCity }) => {
                       weatherData.Temperature &&
                       weatherData.Temperature.Metric && (
                         <>
-                          {weatherData.Temperature.Metric.Value}
-                          {"°" + weatherData.Temperature.Metric.Unit}
+                          {isDarkMode ? (
+                            <span className="text-white">
+                              {weatherData.Temperature.Metric.Value}
+                              {"°" + weatherData.Temperature.Metric.Unit}
+                            </span>
+                          ) : (
+                            <>
+                              {weatherData.Temperature.Metric.Value}
+                              {"°" + weatherData.Temperature.Metric.Unit}
+                            </>
+                          )}
                         </>
                       )}
                   </p>
                 )}
                 <div className="flex flex-row items-center">
-                  <CgAdd className="text-sm text-gray-500" />
-                  <p className="ml-2 text-sm">Add City to Favorites</p>
+                  <p className="ml-2 text-sm">
+                  <div className={isDarkMode ? "text-white" : "text-black"}>
+                    {weatherData && weatherData.Temperature && (
+                      <>
+                        {weatherData.WeatherIcon && (
+                          <>
+                            {([6, 7, 35, 38].includes(
+                              weatherData.WeatherIcon
+                            ) && <>Cloudy</>) ||
+                              ([1, 2, 3, 33].includes(
+                                weatherData.WeatherIcon
+                              ) && <>Sunny</>) ||
+                              ([
+                                12, 13, 14, 15, 16, 17, 18, 26, 29, 39, 40, 41,
+                                42,
+                              ].includes(weatherData.WeatherIcon) && (
+                                <>Precipitation</>
+                              ))}
+                          </>
+                        )}
+                      </>
+                    )}
+                    </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -293,7 +326,13 @@ const ChosenCityPanel = ({ selectedCity }) => {
           </div>
         ) : (
           // Render message if no city is selected
-          <div className="text-center">No city selected yet.</div>
+          <div
+            className={
+              isDarkMode ? "text-white text-center" : "text-black text-center"
+            }
+          >
+            {selectedCity ? `Current City: ${selectedCity}` : "Choose city"}
+          </div>
         )}
       </div>
     </div>

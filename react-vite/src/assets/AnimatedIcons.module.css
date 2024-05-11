@@ -37,7 +37,38 @@
 			scaleDown 2s linear infinite reverse;
 	}
 }
-
+.moon {
+	position: relative;
+	width: 5rem;
+	height: 5rem;
+}
+.moon {
+	&:before {
+		content: "";
+		position: absolute;
+		height: 80%;
+		width: 80%;
+		top: 10%;
+		right: 10%;
+		border-radius: 50%;
+		z-index: 2;
+		background-color: #F5E6BE;
+		background-image: radial-gradient(#F5E6BE, #F5E6BE);
+		box-shadow: 0 0 25px #E5E5E8;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		border-radius: 50%;
+		z-index: 1;
+		background-color: #F5E6BE;
+		will-change: opacity, transform;
+		animation: fadeIn 3s linear infinite reverse,
+			scaleDown 3s linear infinite reverse;
+	}
+}
 .cloudy {
 	position: relative;
 	width: 5rem;
