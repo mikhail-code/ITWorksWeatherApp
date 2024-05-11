@@ -12,7 +12,7 @@ function WeatherForCityPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-start items-center">
+    <div className="min-h-screen flex flex-col justify-start items-center px-4 flex-grow">
       <FavoritesBar />
       <ChosenCityPanel selectedCity={selectedCity} />
       <SearchBar onCitySelected={handleCitySelected} />

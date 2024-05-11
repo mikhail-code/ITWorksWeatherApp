@@ -10,8 +10,9 @@ const FavoritesBar = () => {
   return (
     <div
       className=" 
-    flex flex-row gap-1
-    text-white"
+    flex flex-row justify-center gap-2
+    text-white
+    fixed-width-784"
     >
       <i><FavoriteBubble city={myCity}/></i>
       <i><FavoriteBubble /></i>
@@ -22,7 +23,7 @@ const FavoritesBar = () => {
   );
 };
 
-const FavoriteBubble = ({ city, addToFavoriteTooltip = 'Pin current city' }) => {
+const FavoriteBubble = ({ city, addToFavoriteTooltip = 'Pin' }) => {
     // Check if city object is empty (falsy)
     const isEmpty = !city;
     return (

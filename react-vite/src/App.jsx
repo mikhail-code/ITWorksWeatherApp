@@ -1,40 +1,67 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-
 import axios from 'axios';
 import FavoritesBar from './assets/FavoritesBar';
 import ChosenCityPanel from './assets/ChosenCityPanel';
 import SearchBar from './assets/SearchBar';
 import WeatherForCityPage from './assets/pages/WeatherForCityPage';
-import ExerciseToDoList from './assets/pages/Excercise'
-import Blackjack from './assets/pages/Blackjack'
-import LoginPage from './assets/pages/LoginPage';
-import HomePage from './assets/pages/HomePage';
 
 console.log("API endpoint:", '/api/data'); // Log the endpoint
 
-
 function App() {
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Check for stored login state
+  const [serverData, setServerData] = useState(null);
 
+  // debugging search bar:
+  const cities = [
+    { id: 1, name: 'Tel Aviv' },
+    { id: 2, name: 'Moscow' },
+    { id: 3, name: 'London' },
+  ];
+  const [selected, setSelected] = useState(cities[0].name);
+  const [query, setQuery] = useState('Tel');
+  const [filteredCities, setFilteredCities] = useState([]);
+
+  // const fetchCitySuggestions = async (query) => {
+  //   try {
+  //     const response = await axios.get(`/weather/searchCity?q=${query}`);
+  //     setFilteredCities(response.data);
+  //   } catch (error) {
+  //     console.error('Error fetching city suggestions:', error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (query.length > 0) {
+  //     fetchCitySuggestions(query);
+  //   } else {
+  //     setFilteredCities([]);
+  //   }
+  // }, [query]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/weather/searchCity?q=${query}`);
+        setServerData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  // return (
+  //   <div className="min-h-screen flex flex-col justify-start items-center">
+  //     <FavoritesBar />
+  //     <ChosenCityPanel />
+  //     <SearchBar />
+  //   </div>
+  // );
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={isLoggedIn ? <HomePage /> : <Navigate to="/login" replace />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <WeatherForCityPage />
+    </div>
   );
 }
 
 export default App;
-
-
-//   return (
-//     <div className="App">
-//       <LoginPages></LoginPages>
-//     </div>
-//   );
-// }
-
-// export default App;

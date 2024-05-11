@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
 import { Combobox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { CheckIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import axios from "axios";
 
 const SearchBar = ({ onCitySelected }) => {
@@ -39,7 +39,7 @@ const SearchBar = ({ onCitySelected }) => {
   }, [query]);
 
   return (
-    <div className="relative mt-1 min-w-72">
+    <div className="relative mt-1 min-w-96">
       <Combobox
         value={selected}
         onChange={handleCitySelected}
@@ -54,7 +54,7 @@ const SearchBar = ({ onCitySelected }) => {
                 onChange={(event) => setQuery(event.target.value)}
               />
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                <ChevronUpDownIcon
+                <MagnifyingGlassIcon
                   className="h-5 w-5 text-gray-400"
                   aria-hidden="true"
                 />
