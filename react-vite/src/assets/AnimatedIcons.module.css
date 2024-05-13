@@ -1,7 +1,30 @@
 * {
 	box-sizing: border-box;
 }
-
+.thundery {
+	&__cloud {
+	  &:before {
+		background-color: #4d5656;
+		background-image: radial-gradient(#4d5656, #393c3c);
+		animation: thunder 4s linear 0.02s infinite alternate; /* remove duplicate line */
+	  }
+	  &:after {
+		background-color: #4d5656;
+		background-image: radial-gradient(#4d5656, #393c3c);
+		animation: thunder 4s linear infinite alternate; /* remove duplicate line */
+	  }
+	}
+	&__rain {
+		&:before {
+			animation: fadeIn .5s ease-out infinite reverse,
+				scaleUp .5s ease-out infinite;
+		}
+		&:after {
+			animation: fadeIn .75s ease-out .2s infinite reverse,
+				scaleUp .75s ease-out .2s infinite;
+		}
+	}
+}
 
 .sunny {
 	position: relative;
@@ -166,6 +189,7 @@
 			will-change: opacity, transform;
 			animation: fadeIn 1s ease-out infinite reverse,
 				scaleUp 1s ease-out infinite;
+				animation-name: fadeIn 1s ease-out infinite reverse, scaleUp 1s ease-out infinite;
 		}
 		&:after {
 			content: "";
@@ -180,31 +204,7 @@
 			will-change: opacity, transform;
 			animation: fadeIn 2s ease-out .4s infinite reverse,
 				scaleUp 2s ease-out .4s infinite;
-		}
-	}
-}
-
-.thundery {
-	&__cloud {
-		&:before {
-			background-color: #4d5656;
-			background-image: radial-gradient(#4d5656, #393c3c);
-			animation: thunder 4s linear .02s infinite alternate;
-		}
-		&:after {
-			background-color: #4d5656;
-			background-image: radial-gradient(#4d5656, #393c3c);
-			animation: thunder 4s linear infinite alternate;
-		}
-	}
-	&__rain {
-		&:before {
-			animation: fadeIn .5s ease-out infinite reverse,
-				scaleUp .5s ease-out infinite;
-		}
-		&:after {
-			animation: fadeIn .75s ease-out .2s infinite reverse,
-				scaleUp .75s ease-out .2s infinite;
+				animation-name: fadeIn 2s ease-out .4s infinite reverse, scaleUp 2s ease-out .4s infinite;
 		}
 	}
 }

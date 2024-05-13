@@ -1,10 +1,9 @@
 import { Fragment, useState, useEffect } from "react";
-import { CgAdd } from "react-icons/cg";
 import axios from "axios";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon, MoonIcon } from "@heroicons/react/20/solid";
 
-import { SunnyIcon, RainyIcon, CloudyIcon, Moon } from "./AnimatedIcons";
+import { SunnyIcon, CloudyIcon, Moon } from "./AnimatedIcons";
 
 const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
   // data is passed as a prop (selectedCity)
@@ -38,11 +37,6 @@ const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
           `/api/weather/historicalConditions?locationKey=${query}&hoursAgo=24`
         );
         setHistorical24(responseHistorical);
-        const firstHourData = responseHistorical.data[0];
-        const firstHourTemp = firstHourData.Temperature.Metric.Value; // Assuming temperature is stored this way
-        console.log("Temperature for the first hour:", firstHourTemp, "°C");
-        console.log("Object as whole: ", responseHistorical.data);
-        console.log("Checking historical24: ", historical24);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -100,15 +94,16 @@ const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
                           </>
                         )) ||
                           ([1, 2, 3, 33].includes(weatherData.WeatherIcon) && (
-                            <>
-                            {isDarkMode ? <Moon /> : <SunnyIcon />}
-                            </>
+                            <>{isDarkMode ? <Moon /> : <SunnyIcon />}</>
                           )) ||
                           ([
                             12, 13, 14, 15, 16, 17, 18, 26, 29, 39, 40, 41, 42,
                           ].includes(weatherData.WeatherIcon) && (
                             <>
-                              <RainyIcon />
+                              <div className="thundery">
+                                <div className="thundery__cloud"></div>
+                                <div className="thundery__rain"></div>
+                              </div>
                             </>
                           ))}
                       </>
@@ -145,27 +140,27 @@ const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
                 )}
                 <div className="flex flex-row items-center">
                   <p className="ml-2 text-sm">
-                  <div className={isDarkMode ? "text-white" : "text-black"}>
-                    {weatherData && weatherData.Temperature && (
-                      <>
-                        {weatherData.WeatherIcon && (
-                          <>
-                            {([6, 7, 35, 38].includes(
-                              weatherData.WeatherIcon
-                            ) && <>Cloudy</>) ||
-                              ([1, 2, 3, 33].includes(
+                    <div className={isDarkMode ? "text-white" : "text-black"}>
+                      {weatherData && weatherData.Temperature && (
+                        <>
+                          {weatherData.WeatherIcon && (
+                            <>
+                              {([6, 7, 35, 38].includes(
                                 weatherData.WeatherIcon
-                              ) && <>Sunny</>) ||
-                              ([
-                                12, 13, 14, 15, 16, 17, 18, 26, 29, 39, 40, 41,
-                                42,
-                              ].includes(weatherData.WeatherIcon) && (
-                                <>Precipitation</>
-                              ))}
-                          </>
-                        )}
-                      </>
-                    )}
+                              ) && <>Cloudy</>) ||
+                                ([1, 2, 3, 33].includes(
+                                  weatherData.WeatherIcon
+                                ) && <>Clear</>) ||
+                                ([
+                                  12, 13, 14, 15, 16, 17, 18, 26, 29, 39, 40,
+                                  41, 42,
+                                ].includes(weatherData.WeatherIcon) && (
+                                  <>Precipitation</>
+                                ))}
+                            </>
+                          )}
+                        </>
+                      )}
                     </div>
                   </p>
                 </div>

@@ -27,7 +27,7 @@ module.exports = {
         "LocalObservationDateTime": "2024-05-01T04:47:00+03:00",
         "EpochTime": 1714528020,
         "WeatherText": "Mostly sunny",
-        "WeatherIcon": 3,
+        "WeatherIcon": 12,
         "HasPrecipitation": false,
         "PrecipitationType": null,
         "IsDayTime": false,

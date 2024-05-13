@@ -21,7 +21,7 @@ function WeatherForCityPage() {
         isDarkMode ? 'dark:bg-black bg-gradient-to-r from-gray-800 to-gray-700' : 'bg-white'
       }`}
     >
-      <FavoritesBar />
+      <FavoritesBar selectedCity={selectedCity}/>
       <ChosenCityPanel isDarkMode={isDarkMode} selectedCity={selectedCity} />
       <SearchBar isDarkMode={isDarkMode} onCitySelected={handleCitySelected} />
       <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />  {/* Pass toggleDarkMode function */}
