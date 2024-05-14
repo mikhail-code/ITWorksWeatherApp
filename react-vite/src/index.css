@@ -3,13 +3,29 @@
 @tailwind utilities;
 
 @layer components {
+  .theme-main-color{
+    @apply bg-gray-100
+  }
+  .theme-secondary-color{
+    @apply bg-sky-200
+  }
+  .theme-secondary-color-hover{
+    @apply bg-sky-400
+  }
   .favorite-bubble {
     @apply relative flex items-center flex-col justify-center
     text-gray-300
-    bg-gray-100
+    theme-secondary-color
+    hover:theme-secondary-color-hover
     h-24 w-24 mt-2 mb-2 mx-auto rounded-full
-    hover:bg-gray-400 hover:text-white
+     hover:text-white
     transition-all duration-300 ease-out cursor-pointer;
+  }
+  .remove-icon {
+    position: absolute;
+    left:70px;
+    top:90px;
+    cursor: pointer;
   }
   .favorite-bubble-tooltip {
     @apply absolute w-auto p-2 m-2 min-w-max rounded-md shadow-md
@@ -378,4 +394,15 @@ button:focus-visible {
 	77% { box-shadow: 0 0 25px #a8d3f0; }
 	78% { box-shadow: 0 0 25px rgba(0,0,0,.3); }
 	100% { box-shadow: 0 0 25px rgba(0,0,0,.3); }
+}
+.error-message {
+  background-color: #dbdbdb;
+  border: 1px solid #6f6f6f;
+  flex: none;
+  position: absolute;
+  bottom: 50px;
+  border-radius: 4px;
+  padding: 10px;
+  color: #6f6f6f;
+  margin-bottom: 10px;
 }

@@ -53,7 +53,7 @@ const SearchBar = ({ onCitySelected }) => {
                 displayValue={(person) => person.name}
                 onChange={(event) => setQuery(event.target.value)}
               />
-              <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+              <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2 theme-secondary-color">
                 <MagnifyingGlassIcon
                   className="h-5 w-5 text-gray-400"
                   aria-hidden="true"

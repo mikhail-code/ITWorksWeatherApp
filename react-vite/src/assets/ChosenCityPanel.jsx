@@ -178,7 +178,7 @@ const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
                         <>
                           {" "}
                           {/* Removed: bg-white-100 text-purple-900 */}
-                          <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-100 hover:bg-gray-300 px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-gray-200/75">
+                          <Disclosure.Button className="theme-secondary-color hover:theme-secondary-color-hover flex w-full justify-between rounded-lg   px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-gray-200/75">
                             <span>12 hours forecast</span>
                             <ChevronUpIcon
                               className={`${
@@ -238,7 +238,7 @@ const ChosenCityPanel = ({ isDarkMode, selectedCity }) => {
                     <Disclosure defaultOpen={true}>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-100 hover:bg-gray-300 px-4 py-2 text-left text-sm font-medium focus:outline-none">
+                          <Disclosure.Button className="theme-secondary-color hover:theme-secondary-color-hover flex w-full justify-between rounded-lg px-4 py-2 text-left text-sm font-medium focus:outline-none">
                             <span>5 days forecast</span>
                             <ChevronUpIcon
                               className={`${
